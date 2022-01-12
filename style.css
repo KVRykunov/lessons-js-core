@@ -1,117 +1,61 @@
-body,
-html {
-	width: 100%;
-	background: rgb(0,255,250);
-	background: linear-gradient(15deg, rgba(0,255,250,0.1) 0%, rgba(217,255,142,0.2) 37%, rgba(214,255,154,0.3) 57%, rgba(0,184,63,0.3) 91%);
-	font-size: 1rem;
-}
-.person {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: row;
-	flex-wrap: wrap;
-	border: 2px solid blue;
+@font-face {
+	font-family: "StarJedi";
+	src: url('StarJedi(regular).ttf');
 }
 
-.person__info {
-	margin: 2rem 2rem 2rem -17rem;
-	border: 2rem solid #FFF;
-	border-radius: 50%;
-	border-color: white;
-	overflow: hidden;
-	-webkit-transition: all 0.5s ease;
-			transition: all 0.5s ease;
+@font-face {
+	font-family: "Starjedi";
+	src: url('Starjedi.ttf');
 }
 
-.person__info:hover {
-	border-radius: 50%;
-	-webkit-transform: rotate(360deg);
-			transform: rotate(360deg);
-  }
 
-.person__contacts {
-	margin: 0 0 1rem 1rem;
-}
 
-.person__details {
-	margin-right: 20%;
-	margin-left: 20%;
-	font-size: 1rem;
-}
-
-.avatar {
-	
-}
-.avatar__picture {
-	width: 22rem;
-	height: 20rem;
-	border-radius: 50%;
-}
-.contacts {
-	display: flex;
-	flex-direction: column;
-}
-.contacts__name {
-	font-weight: bold;
-	font-size: 2rem;
-}
-.contacts__role {
-	font-size: 19.2px;
-	font-weight: bold;
-	margin-bottom: 3rem;
-}
-.contacts__item {
-	font-size: 1rem;
-}
-.contacts__title {
-	/* добавьте ваш код  */
-}
-.contacts__title:after {
-	/* добавьте ваш код  */
-}
-.contacts__link {
-	color: gray;
-	font-size: 1rem;
-}
-.paragraph {
-	margin-bottom: 16px;
-}
-.paragraph_last {
-	margin-bottom: 46px;
-}
-
-@media screen and (max-width: 1000px) {
-	.avatar__picture{
-		width: 15rem;
-	    height: 15rem;
-	    border-radius: 50%;
+body {
+    background-image: url('starwars.jpg');
+    overflow: hidden;
+	font-family: "StarJedi";
+	font-family: "Starjedi";
+	margin: 45% 0 0 0;
+	position: relative;
 	}
-	.person__info {
-	margin: 32 32 32 0;
-	border: 16px solid #FFF;
-}
-} 
 
-@media screen and (max-width: 600px) {
-	.contacts__name {
-	font-weight: 300px;
-	font-size: 1.5rem;
-}
-    .contacts__role {
-	font-size: 1rem;
-	font-weight: bold;
-	margin-bottom: 10px;
-}
-    .contacts__item {
-	font-size: 14px;
-}
-    .contacts__link {
-	font-size: 14px;
-}
-    .contacts {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+body::after {
+	content: '';
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 50%;
+	background: linear-gradient(180deg, rgba (20,20,20,1) 40%, rgba(20,20,20,0) 100%);
 }
 
+.wrapper {
+    display: flex;
+	height: 100%;
+	width: 60%;
+	margin: 0 auto;
+	perspective: 450px;
+}
+
+.scroll-text {
+    color: #ffc909;
+	font-size: 3vw;
+	line-height: 1.5em;
+	text-align: justify;
+	position: relative;
+	animation: scroll 60s linear forwards;
+}
+
+h1, h2 {
+	text-align: center;
+}
+
+@keyframes scroll {
+	from { top: 0; transform: translateZ(0) rotateX(20deg) }
+	to { top: -7500px; transform: translateZ(-2500px) rotateX(20deg) } 
+}
+
+.space__top {
+	background-image: url('starwars.jpg');
+	position: absolute;
+	z-index: 1;
+}
