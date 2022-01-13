@@ -1,104 +1,61 @@
-body,
-html {
-	width: 100%;
-	background: rgb(0,255,250);
-	background: linear-gradient(15deg, rgba(0,255,250,0.1) 0%, rgba(217,255,142,0.2) 37%, rgba(214,255,154,0.3) 57%, rgba(0,184,63,0.3) 91%);
-	font-size: 16px;
-}
-.person {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: row;
-	flex-wrap: wrap;
-}
-.person__info {
-	margin: 32 32 32 0;
-	border: 32px solid #FFF;
-	border-radius: 50%;
-	border-color: white;
-
-}
-.person__contacts {
-	margin-bottom: 16px;
-}
-.person__details {
-	margin-right: 10%;
-	margin-left: 10%;
-	font-size: 16px;
-}
-.avatar {
-	
-}
-.avatar__picture {
-	width: 250px;
-	height: 250px;
-	border-radius: 50%;
-}
-.contacts {
-	display: flex;
-	flex-direction: column;
-}
-.contacts__name {
-	font-weight: bold;
-	font-size: 32px;
-}
-.contacts__role {
-	font-size: 19.2px;
-	font-weight: bold;
-	margin-bottom: 16px;
-}
-.contacts__item {
-	font-size: 16px;
-}
-.contacts__title {
-	/* добавьте ваш код  */
-}
-.contacts__title:after {
-	/* добавьте ваш код  */
-}
-.contacts__link {
-	color: gray;
-	font-size: 16px;
-}
-.paragraph {
-	margin-bottom: 16px;
-}
-.paragraph_last {
-	margin-bottom: 46px;
+@font-face {
+	font-family: "StarJedi";
+	src: url('StarJedi(regular).ttf');
 }
 
-@media screen and (max-width: 340px) {
-	.avatar__picture{
-		width: 170px;
-	    height: 170px;
-	    border-radius: 50%;
+@font-face {
+	font-family: "Starjedi";
+	src: url('Starjedi.ttf');
+}
+
+
+
+body {
+    background-image: url('starwars.jpg');
+    overflow: hidden;
+	font-family: "StarJedi";
+	font-family: "Starjedi";
+	margin: 45% 0 0 0;
+	position: relative;
 	}
-	.person__info {
-	margin: 32 32 32 0;
-	border: 16px solid #FFF;
-}
-} 
 
-@media screen and (max-width: 375px) {
-	.contacts__name {
-	font-weight: 300px;
-	font-size: 25px;
-}
-    .contacts__role {
-	font-size: 16px;
-	font-weight: bold;
-	margin-bottom: 10px;
-}
-    .contacts__item {
-	font-size: 14px;
-}
-    .contacts__link {
-	font-size: 14px;
-}
-    .contacts {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+body::after {
+	content: '';
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 50%;
+	background: linear-gradient(180deg, rgba (20,20,20,1) 40%, rgba(20,20,20,0) 100%);
 }
 
+.wrapper {
+    display: flex;
+	height: 100%;
+	width: 60%;
+	margin: 0 auto;
+	perspective: 450px;
+}
+
+.scroll-text {
+    color: #ffc909;
+	font-size: 3vw;
+	line-height: 1.5em;
+	text-align: justify;
+	position: relative;
+	animation: scroll 60s linear forwards;
+}
+
+h1, h2 {
+	text-align: center;
+}
+
+@keyframes scroll {
+	from { top: 0; transform: translateZ(0) rotateX(20deg) }
+	to { top: -7500px; transform: translateZ(-2500px) rotateX(20deg) } 
+}
+
+.space__top {
+	background-image: url('starwars.jpg');
+	position: absolute;
+	z-index: 1;
+}
